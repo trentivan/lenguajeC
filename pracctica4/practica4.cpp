@@ -1,4 +1,15 @@
+/*
+hernandez Cesena Ivan Fernando - 373077
 
+Creado el: 20 de Septiembre del 2023 / Modificado el 21 de Septiembre del 2023
+
+practica 4 
+    1.- fibonacci sin recursion.  imprime el valor en la posicion n
+
+    2.- fibonacci recursivo (funciona con el return).  imprime el valor en la posicion n
+
+    3.- triangulo de pascal imprime n filas del triangulo de pascal 
+*/
 
 #include <stdio.h>
 void menu(void);
