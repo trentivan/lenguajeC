@@ -127,3 +127,23 @@ void trianguloPascal()
     }
     // reintentar();
 }
+  //fin del codigo
+void trianguloPascal() 
+{
+    int n;
+    printf("Ingrese el numero de filas para el Triangulo de Pascal:\n");
+    scanf("%d", &n);
+
+    // Bucle externo para las filas del Triángulo de Pascal
+    for (int i = 0; i < n; i++) 
+    {
+        // Bucle interno para imprimir los coeficientes en una fila
+        for (int j = 0; j <= i; j++) 
+        {
+            // Llama a la función para calcular el coeficiente binomial y lo imprime
+            printf("%d ", Binomial(i, j));
+        }
+        printf("\n"); // Imprime un salto de línea al final de cada fila
+    }
+    // reintentar();
+}
