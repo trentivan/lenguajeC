@@ -74,9 +74,7 @@ void automatica()
 
 void externa()
 {
-    int saldo;
-    sumaSaldo(100);
-    restaSaldo(20);
-
-    printf("externa.c - saldo final: %d\n", saldo);
+    extern int saldo; // se extrae la variable de otro archivo. en este caso es mi "externa.c"
+    sumaSaldo(100); // se suma el parametro a mi saldo en el otro archivo. saldo =100. saldo = 100 + 100.
+    restaSaldo(20); // se resta el 20 a mi saldo previamente alterado.
 }

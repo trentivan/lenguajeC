@@ -5,35 +5,19 @@
 
 #include <stdio.h>
 
-extern int saldo;
-void modificarSaldo(void);
-void restaSaldo(int cantidad);
-void sumaSaldo(int cantidad);
+int saldo = 100;
 
-int main()
-{
-    saldo = 0;
 
-    // invocacion de la funcion
-    modificarSaldo();
-
-    printf("saldo final: %d\n", saldo);
-    return 0;
-}
-
-int saldo;
-
-void modificarSaldo()
-{
-    saldo += 100;
-}
 
 void restaSaldo(int cantidad)
 {
     saldo -= cantidad;
+    printf("externa.c - saldo final: %d\n", saldo);
 }
 
 void sumaSaldo(int cantidad)
 {
+    saldo = 100;
     saldo += cantidad;
+    printf("externa.c - saldo final: %d\n", saldo);
 }
