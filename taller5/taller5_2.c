@@ -1,18 +1,9 @@
-//Nombre del archivo:   taller5.c
-//Autor: Hernandez Cesena Ivan Fernando
-//Fecha de creación: 30 de septiembre de 2023
-//Descripción: Este archivo contiene el código principal de mi programa.
-
 #include <stdio.h>
-
 
 void menu(void);
 int validar(char msge[], int li,int ls);
 
 void automatica(void);
-void externa(void);
-void sumaSaldo(int cantidad);
-void restaSaldo(int cantidad);
 
 void estatica(void);
 void registro(void);
@@ -49,7 +40,6 @@ void menu()
             break;
 
             case 2:
-            externa();
             break;
 
             case 3:
@@ -99,18 +89,11 @@ void automatica()
     // esta variable se destruye al terminar esta funcion o bloque de codigo
 }
 
-void externa()
-{
-    extern int saldo; // se extrae la variable de otro archivo. en este caso es mi "externa.c"
-    sumaSaldo(100); // se suma el parametro a mi saldo en el otro archivo. saldo =100. saldo = 100 + 100.
-    restaSaldo(20); // se resta el 20 a mi saldo previamente alterado.
-}
 
-//funcion que imprime el valor de una variable estatica declarada dentro de la funcion.
 void estatica()
 {
     static int estatica=1;
-    printf("%d", estatica);
+    printf("%d ", estatica);
 
     // lo que sucede con la variable al salir de la funcion conserva su valor solo que no se puede usar
     // fuera de la funcion donde fue declarada
@@ -134,12 +117,12 @@ void registro()
 
 void global()
 {
-    float num = PI;
-    printf("%f\n", num);
+    int num = PI;
+    printf("%d\n", num);
 }
 
 void local()
 {
-    float pi = 3.14159;
-    printf("%f\n", pi);
+    int pi = 3.14159;
+    printf("%d\n", pi);
 }
