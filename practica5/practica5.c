@@ -14,7 +14,7 @@ int validar(char msge[], int li,int ls);
 int generarNumeroLoteria(void);
 void loteria(void);
 void carrera(void);
-int iniciarCarrera(void);
+void iniciarCarrera(void);
 
 int main() // la funcion principal. 
 {
@@ -30,10 +30,11 @@ int msg() // funcion que muestra menajes y retorna la opcion elegida
     printf("0) terminar programa\n ");
     
     op = validar("elije una opcion\n", 0, 2);
+    return op;
 }
 
 // esta es la funcion menu que controla las opciones elegidas
-void menu(void)
+void menu()
 {
     int op;
     do
@@ -105,7 +106,7 @@ int generarNumeroLoteria()
 //se genera aleatoriamente la velocidad de los 3 carros
 // se calcula el tiempo de recorrido de la carrera en segundos (2000 metros) 
 
-int iniciarCarrera()
+void iniciarCarrera()
 {
     srand(time(NULL));
 
