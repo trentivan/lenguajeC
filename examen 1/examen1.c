@@ -1,12 +1,12 @@
 #include <stdio.h>
-// #define X 6
+
 
 int main()
 {
-    int num = 29, i, j;
+    int num, i, j;
     int acum=0;
-    // printf("dame un numero positivo");
-    // scanf("%d", &num);
+    printf("dame un numero positivo");
+    scanf("%d", &num);
 
     for(i=2; i<num; i++)
     {
@@ -19,7 +19,6 @@ int main()
                 acum= acum + j;
             }
         }
-        // printf("acum = %d ", acum);
         if(j==acum)
         {
             printf("\n");
