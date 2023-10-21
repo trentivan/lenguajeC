@@ -1,9 +1,9 @@
-#include "ivan.h" 
-
 // nombre del archivo: practica6.c
 // autor: Hernandez Ceseña Ivan Fernando
 // fecha creacion 20- 10- 23
 // este archivo contiene el codigo principal de mi programa. la libreria contiene funciones para validar
+
+#include "ivan.h" 
 
 void menu(void);
 int msg(void);
@@ -17,6 +17,8 @@ int encontrarMaximo(int *arreglo, int n);
 int main()
 {
     menu();
+
+    return 0;
 }
 
 int msg()  // esta funcion muestra las opciones en pantalla y guarda tu eleccion
