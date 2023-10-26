@@ -1,7 +1,11 @@
-
-
-
-
+// nombre del archivo: taller7.c
+// autor: Hernandez Ceseña Ivan Fernando
+// fecha creacion 25- 10- 23
+// este archivo contiene el codigo principal de mi programa. la libreria contiene funciones para validar
+// imprime nombres ya definidos en un vet\ctor de cadenas.
+// pide al usuario que escriba nombres
+// imprime los nombres ingresados y los ya definidos
+// ordena 10 palabras en orden alfabetico con el metodo de ordenacion de la brubuja.
 
 #include "ivan.h"
 
@@ -85,7 +89,7 @@ void imprimirNombres2(char *nombre[3])
 
 void ordenar()
 {
-    int i, j, num=5;
+    int i, j, num=10;
     char *palabras[num];
     char temp[num];
     char buffer[10];
