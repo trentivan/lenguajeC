@@ -11,7 +11,7 @@ rojoAlto2 = np.array([180, 255, 255], np.uint8)
 
 # leer imagen
 
-image = cv2.imread('C:\\Users\\elvan\\Downloads\\uabc_3_sem\\lenguaje c\\lenguajeC\\python\\flor.jpg')
+image = cv2.imread('C:\\Users\\elvan\\Downloads\\uabc_3_sem\\lenguaje c\\lenguajeC\\actividad_escalaColores\\flor.jpg')
 image = imutils.resize(image, width=640)
 
 # transformando a otros espacios de color
