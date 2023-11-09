@@ -6,11 +6,11 @@
 #include "ivan.h"
 
 int msg();
-void metodo1(int *p, int m, int n);
-void metodo2(int v[], int m, int n);
-void metodo3(int A[][3], int m, int n);
-void metodo4(int *p[], int m, int n);
-void metodo5(int **q, int m, int n);
+void busquedaLineal_Metodo1(int *p, int m, int n);
+void busquedaLineal_Metodo2(int v[], int m, int n);
+void busquedaLineal_Metodo3(int A[][3], int m, int n);
+void busquedaLineal_Metodo4(int *p[], int m, int n);
+void busquedaLineal_Metodo5(int **q, int m, int n);
 
 int main()  // funcion principal que controla todo el programa
 {
