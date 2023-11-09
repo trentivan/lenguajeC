@@ -3,10 +3,11 @@
 #include "ivan.h"
 
 int msg();
-void ordenar(char *palabras[5]);
+void ordenar();
 void operaciones(int matriz[][3], int m, int n);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
 
     // convertimos los argumentos obtenidos a numeros
     int numero1 = atoi(argv[1]);
@@ -27,7 +28,6 @@ int main(int argc, char *argv[]) {
 
     int op, i, j;
     int matriz[3][3];
-    char palabras[10][5] = ("manzana", "banana", "cereza", "uva", "naranja");
 
 
     for(i=0; i<3; i++)
@@ -37,12 +37,13 @@ int main(int argc, char *argv[]) {
             matriz[i][j] = (rand()% 100) +1;
         }
     }
-    op = msg();
+
     do{
+        op = msg();
         switch(op)
         {
             case 1:
-            ordenar(&palabras);
+            ordenar();
             break;
 
             case 2:
@@ -67,32 +68,32 @@ int msg()  // funcion que muestra el menu
     return op;
 }
 
-void ordenar(char *palabras[5]) // esta funcion ordena una lista de palabras en orden alfabetico
+void ordenar() // esta funcion ordena una lista de palabras en orden alfabetico
 {
-    int i, j, num=10;
-    char temp[5];
-    char buffer[10];
-    for(i=0; i<num; i++)
-    {
-        palabras[i] = (char *)malloc(10);
-        buffer[strcspn(buffer, "\n")] = '\0';
-        strcpy(palabras[i], buffer);
-    }
+    // Inicializamos el arreglo de palabras
+    char *palabras[] = {"manzana", "banana", "cereza", "uva", "naranja"};
+    // obtenemos el tamanio del vector
+    int tamano = sizeof(palabras) / sizeof(palabras[0]);
 
-    for(i=0; i<num; i++)
+    // Ciclo para ordenar las palabras en orden alfabético
+    for (int i = 0; i < tamano - 1; i++)
     {
-        for(j=i+1; j<num; j++)
+        for (int j = i + 1; j < tamano; j++)
         {
-            if (strcmp(palabras[j], palabras[i]) < 0)
+            //Si la comparacion entre ambas cadenas es mayor que cero significa que
+            //no estan en el orden correcto
+            if (strcmp(palabras[i], palabras[j]) > 0)
             {
-                strcpy(temp, palabras[i]);
-                strcpy(palabras[i], palabras[j]);
-                strcpy(palabras[j], temp);
+                // Ordenamos mediante el metodo de la burbuja
+                char *temp = palabras[i];
+                palabras[i] = palabras[j];
+                palabras[j] = temp;
             }
         }
     }
 
-    for(i=0; i<num; i++)
+    // Imprimir las palabras ordenadas
+    for (int i = 0; i < 5; i++)
     {
         printf("%s\n", palabras[i]);
     }
@@ -104,9 +105,9 @@ void operaciones(int matriz[][3], int m, int n)
     int suma = 0;
     int fila, columna;
     int *ptr = &matriz[0][0];
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < n; j++)
         {
             // Sumar el elemento actual a la suma total
             suma += *ptr;
@@ -123,37 +124,7 @@ void operaciones(int matriz[][3], int m, int n)
             ptr++;
         }
     }
-    printf("");
-    printf("");
+    printf("suma: %d\n", suma);
+    printf("elemento mas grande: %d\n", mayor);
+    printf("en la posicion: %d %d\n", fila, columna);
 }
-
-// int sumaElementos(int *(vector), int m, int n)  // esta funcion suma los elementos del vector
-// {
-//     int suma = 0;
-//     int i;
-
-//     for(i=0; i<n; i++)
-//     {
-//         suma = suma + *(vector + i);
-//     }
-//     return suma;
-// }
-
-// int encontrarMaximo(int *arreglo[], int n)  // esta funcion encuentra el valor maximo de un vector y lo retorna
-// {
-//     if (n <= 0) 
-//     {
-//         return -1;
-//     }
-
-//     int maximo = arreglo[0];
-
-//     for (int i = 1; i < n; i++) 
-//     {
-//         if (arreglo[i] > maximo) 
-//         {
-//             maximo = arreglo[i];
-//         }
-//     }
-//     return maximo;
-// }
