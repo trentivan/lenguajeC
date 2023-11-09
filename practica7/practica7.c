@@ -1,4 +1,8 @@
-
+// taller8.c
+// Hernandez Ceseña Ivan Fernando
+// 08/11/2023
+// este codigo recibe argumentos desde la terminal, ordena un vector de cadena en orden alfabetico
+// realiza suma de elementos en la matriz, encuentra el valor maximo y da su ubicacion en la matriz
 
 #include "ivan.h"
 
@@ -70,21 +74,17 @@ int msg()  // funcion que muestra el menu
 
 void ordenar() // esta funcion ordena una lista de palabras en orden alfabetico
 {
-    // Inicializamos el arreglo de palabras
     char *palabras[] = {"manzana", "banana", "cereza", "uva", "naranja"};
-    // obtenemos el tamanio del vector
     int tamano = sizeof(palabras) / sizeof(palabras[0]);
-
-    // Ciclo para ordenar las palabras en orden alfabético
+    
     for (int i = 0; i < tamano - 1; i++)
     {
         for (int j = i + 1; j < tamano; j++)
         {
-            //Si la comparacion entre ambas cadenas es mayor que cero significa que
-            //no estan en el orden correcto
+            
             if (strcmp(palabras[i], palabras[j]) > 0)
             {
-                // Ordenamos mediante el metodo de la burbuja
+                
                 char *temp = palabras[i];
                 palabras[i] = palabras[j];
                 palabras[j] = temp;
@@ -92,14 +92,13 @@ void ordenar() // esta funcion ordena una lista de palabras en orden alfabetico
         }
     }
 
-    // Imprimir las palabras ordenadas
     for (int i = 0; i < 5; i++)
     {
         printf("%s\n", palabras[i]);
     }
 }
 
-void operaciones(int matriz[][3], int m, int n)
+void operaciones(int matriz[][3], int m, int n)  // funcion que realiza suma de elementos en la matriz, encuentra el valor maximo y da su ubicacion en la matriz
 {
     int mayor = matriz[0][0];
     int suma = 0;
@@ -109,18 +108,13 @@ void operaciones(int matriz[][3], int m, int n)
     {
         for (int j = 0; j < n; j++)
         {
-            // Sumar el elemento actual a la suma total
             suma += *ptr;
-
-            // Comprobar si el elemento actual es mayor que el maximo encontrado hasta ahora
             if (*ptr > mayor)
             {
                 mayor = *ptr;
                 fila = i;
                 columna = j;
             }
-
-            // Avanzar al siguiente elemento de la matriz
             ptr++;
         }
     }
