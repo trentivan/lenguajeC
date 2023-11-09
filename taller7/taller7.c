@@ -25,7 +25,8 @@ int msg()
     printf("1) imprimir nombres\n");
     printf("2) escribir nombres\n");
     printf("3) ordenar palabras\n");
-    op = validacionNumero("elige una opcion", 1, 6);
+    printf("4) terminar programa\n");
+    op = validacionNumero("elige una opcion", 1, 4);
     return op;
 }
 
@@ -50,11 +51,11 @@ void menu()
             ordenar();
             break;
         }
-    }while(op != 6);
+    }while(op != 4);
 }
 
 
-void imprimirNombres()
+void imprimirNombres() // esta funcion 
 {
     char *nombres[3] = {"ivan", "fernando", "compadre diego"};
     int i;
@@ -62,7 +63,7 @@ void imprimirNombres()
     imprimirNombres2(nombres);
 }
 
-void escribirNombres()
+void escribirNombres() // en esta funcion se escriben nombres en un vector de cadenas que es un apuntador 
 {
     char *nombres[3];
     int i;
@@ -78,7 +79,7 @@ void escribirNombres()
     imprimirNombres2(nombres);
 }
 
-void imprimirNombres2(char *nombre[3])
+void imprimirNombres2(char *nombre[3]) // esta funcion imprime nombres los nombres de la funcion escribirNombres
 {
     int i;
     for(i=0; i<3; i++)
@@ -87,7 +88,7 @@ void imprimirNombres2(char *nombre[3])
     }
 }
 
-void ordenar()
+void ordenar() // esta funcion ordena una lista de palabras en orden alfabetico
 {
     int i, j, num=10;
     char *palabras[num];
