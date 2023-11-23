@@ -21,7 +21,7 @@ int main()  // funcion principal que controla todo el programa
     int matriz[m][n];
     int vector[m];
     int *q[m];
-    int **t = q;
+    int **t = &q;
     clock_t inicio, fin;
     double tiempo;
 
@@ -206,6 +206,7 @@ void busquedaLineal_Metodo5(int **q, int m, int n)  // funcion del metodo 5 de b
 
     for(i = 0; i < m; i++)
     {
+        printf("hola\n");
         for(j = 0; j < n; j++)
         {
             printf("%d\t", q[i][j]);
